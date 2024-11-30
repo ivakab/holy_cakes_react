@@ -8,5 +8,5 @@ interface IProps {
 }
 
 export const Button = (props: IProps) => {
-  return <button {...props} className={styles.button + props.className} />
+  return <button {...props} className={`${styles.button} ${props.className}`} />
 }
