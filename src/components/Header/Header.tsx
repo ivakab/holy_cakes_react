@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <Button onClick={onClose}>Close</Button>
-      <span className={styles.username}>{user?.userName}</span>
+      <span className={styles.username}>{user?.userName} test</span>
     </div>
   )
 }
