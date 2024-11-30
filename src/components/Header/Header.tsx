@@ -4,7 +4,7 @@ import { Button } from '../Button/Button'
 
 import styles from './Header.module.css'
 
-const Header = () => {
+export const Header = () => {
   const { user, onClose } = useTelegram()
 
   return (
