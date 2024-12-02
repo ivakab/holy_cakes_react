@@ -3,6 +3,8 @@ import { useTelegram } from '../../hooks/useTelegram'
 import { IProduct } from '../interfaces'
 import { ProductItem } from '../ProductItem/ProductItem'
 import styles from './ProductList.module.css'
+import { Button } from '../Button/Button'
+import { useTranslation } from 'react-i18next'
 
 export const products = [
   {
@@ -63,6 +65,7 @@ const getTotalPrice = (items: IProduct[] = []) => {
 
 export const ProductList = () => {
   const [addedItems, setAddedItems] = useState<IProduct[]>([])
+  const { i18n } = useTranslation()
   const { tg, queryId } = useTelegram()
 
   const onSendData = useCallback(() => {
@@ -79,6 +82,10 @@ export const ProductList = () => {
       body: JSON.stringify(data),
     })
   }, [addedItems, queryId])
+
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language)
+  }
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData)
@@ -110,10 +117,15 @@ export const ProductList = () => {
   }
 
   return (
-    <div className={styles.list}>
-      {products.map((item) => (
-        <ProductItem product={item} onAdd={onAdd} className={styles.item} />
-      ))}
+    <div>
+      <Button onClick={() => changeLanguage('sr')}>SR</Button>
+      <Button onClick={() => changeLanguage('ru')}>RU</Button>
+      <Button onClick={() => changeLanguage('en')}>EN</Button>
+      <div className={styles.list}>
+        {products.map((item) => (
+          <ProductItem product={item} onAdd={onAdd} className={styles.item} />
+        ))}
+      </div>
     </div>
   )
 }
