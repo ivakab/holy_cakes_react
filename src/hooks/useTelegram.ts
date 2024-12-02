@@ -1,3 +1,4 @@
+// @ts-ignore
 const tg = window.Telegram.WebApp
 
 export const useTelegram = () => {
@@ -18,5 +19,6 @@ export const useTelegram = () => {
     user: tg.initDataUnsafe?.user,
     onClose,
     onToggleButton,
+    queryId: tg.initDataUnsafe?.query_id,
   }
 }
