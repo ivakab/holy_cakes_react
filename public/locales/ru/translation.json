@@ -1,12 +1,38 @@
 {
-  "main": {
-    "header": "Начало",
-    "new_messages_one": "You have one new message",
-    "new_messages_other": "You have {{count}} new messages",
-    "current_date": "Today is {{date, DATE_LONG}}",
-    "incoming_message": "You have a new message from {{from}}",
-    "message_contents": "They say: {{body}}",
-    "message_contents_male": "He says: {{body}}",
-    "message_contents_female": "She says: {{body}}"
+  "footer": {
+    "about": "О проекте",
+    "works": "Работы",
+    "order": "Заказать",
+    "events": "Мероприятия"
+  },
+  "description": "Здесь я расскажу что-то о себе",
+  "products": {
+    "categories": {
+      "cakes": "Торты",
+      "bento": "Бенто",
+      "cupcakes": "Капкейки",
+      "macarons": "Макароны"
+    },
+    "bento": {
+      "modal_header": "Выберите ваш Бенто",
+      "select_size": "Выберите размер",
+      "select_sponge": "Выберите бисквит",
+      "select_filling": "Выберите начинку",
+      "sizes": {
+        "m": "М (400 г)",
+        "l": "Л (700 г)",
+        "heart": "Сердце (450-500 г)"
+      },
+      "sponges": {
+        "choko": "Шоколадный",
+        "vanilla": "Ванильный",
+        "carrot": "Морковный"
+      },
+      "fillings": {
+        "cherry": "Вишня",
+        "caramel": "Карамель",
+        "strawberry": "Клубника"
+      }
+    }
   }
 }

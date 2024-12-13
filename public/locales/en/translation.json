@@ -1,12 +1,38 @@
 {
-  "main": {
-    "header": "Start",
-    "new_messages_one": "You have one new message",
-    "new_messages_other": "You have {{count}} new messages",
-    "current_date": "Today is {{date, DATE_LONG}}",
-    "incoming_message": "You have a new message from {{from}}",
-    "message_contents": "They say: {{body}}",
-    "message_contents_male": "He says: {{body}}",
-    "message_contents_female": "She says: {{body}}"
+  "footer": {
+    "about": "About project",
+    "works": "Works",
+    "order": "Order",
+    "events": "Events"
+  },
+  "description": "Here I will tell you something about myself",
+  "products": {
+    "categories": {
+      "cakes": "Cakes",
+      "bento": "Bento",
+      "cupcakes": "Cupcakes",
+      "macarons": "Macarons"
+    },
+    "bento": {
+      "modal_header": "Choose your Bento",
+      "select_size": "Select size",
+      "select_sponge": "Select sponge",
+      "select_filling": "Select filling",
+      "sizes": {
+        "m": "M (400 g)",
+        "l": "L (700 g)",
+        "heart": "Heart (450-500 g)"
+      },
+      "sponges": {
+        "choko": "Choko",
+        "vanilla": "Vanilla",
+        "carrot": "Carrot"
+      },
+      "fillings": {
+        "cherry": "Cherry",
+        "caramel": "Caramel",
+        "strawberry": "Strawberry"
+      }
+    }
   }
 }

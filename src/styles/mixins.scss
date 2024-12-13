@@ -1,0 +1,13 @@
+@mixin theme($bg, $text, $hover-bg, $active-bg) {
+  background: $bg;
+  color: $text;
+
+  &:hover {
+    background: $hover-bg;
+  }
+
+  &:active {
+    background: $active-bg;
+    transform: scale(0.95);
+  }
+}
