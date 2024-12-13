@@ -86,7 +86,7 @@ export const Products = () => {
         </div>
       ))}
       QueryID: {queryId}
-      {currentData ? <div>{currentData}</div> : <></>}
+      {currentData ? <div>{JSON.stringify(currentData)}</div> : <></>}
       <Modal isOpen={!!selectedCategory} onClose={closeModal} onSave={onSave}>
         {SelectedComponent && <SelectedComponent />}
       </Modal>
