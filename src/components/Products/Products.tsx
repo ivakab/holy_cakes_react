@@ -35,7 +35,9 @@ export const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null,
   )
+  const [currentResponse, setCurrentResponse] = useState<any>()
   const [currentData, setCurrentData] = useState<any>()
+  const [currentError, setCurrentError] = useState<any>()
 
   const openModal = (category: Category) => {
     setSelectedCategory(category)
@@ -51,7 +53,6 @@ export const Products = () => {
       sum: 2000,
       queryId,
     }
-    setCurrentData(data)
 
     fetch('http://46.101.228.214:8000/web-data', {
       method: 'POST',
@@ -59,7 +60,16 @@ export const Products = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    }).then()
+    })
+      .then((response) => {
+        setCurrentResponse(response)
+
+        return response.json()
+      })
+      .then((data) => setCurrentData(data))
+      .catch((error) => {
+        setCurrentError(error)
+      })
     setSelectedCategory(null)
   }
 
@@ -86,7 +96,21 @@ export const Products = () => {
         </div>
       ))}
       QueryID: {queryId}
-      {currentData ? <div>{JSON.stringify(currentData)}</div> : <></>}
+      {currentResponse ? (
+        <div>Response received:{JSON.stringify(currentResponse)}</div>
+      ) : (
+        <></>
+      )}
+      {currentData ? (
+        <div>Response currentData:{JSON.stringify(currentData)}</div>
+      ) : (
+        <></>
+      )}
+      {currentError ? (
+        <div>Response currentError:{JSON.stringify(currentError)}</div>
+      ) : (
+        <></>
+      )}
       <Modal isOpen={!!selectedCategory} onClose={closeModal} onSave={onSave}>
         {SelectedComponent && <SelectedComponent />}
       </Modal>
