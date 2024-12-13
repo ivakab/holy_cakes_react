@@ -57,6 +57,7 @@ export const Products = () => {
       },
       body: JSON.stringify(data),
     })
+    setSelectedCategory(null)
   }
 
   const SelectedComponent = useMemo(() => {
