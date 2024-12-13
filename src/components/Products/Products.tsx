@@ -35,6 +35,7 @@ export const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null,
   )
+  const [currentData, setCurrentData] = useState<any>()
 
   const openModal = (category: Category) => {
     setSelectedCategory(category)
@@ -44,14 +45,15 @@ export const Products = () => {
     setSelectedCategory(null)
   }
 
-  const onSave = () => {
+  const onSave = async () => {
     const data = {
       info: ['addedItems'],
       sum: 2000,
       queryId,
     }
+    setCurrentData(data)
 
-    fetch('http://46.101.228.214:8000/web-data', {
+    await fetch('http://46.101.228.214:8000/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -84,6 +86,7 @@ export const Products = () => {
         </div>
       ))}
       QueryID: {queryId}
+      {currentData ? <div>{currentData}</div> : <></>}
       <Modal isOpen={!!selectedCategory} onClose={closeModal} onSave={onSave}>
         {SelectedComponent && <SelectedComponent />}
       </Modal>
