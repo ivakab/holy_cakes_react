@@ -54,7 +54,7 @@ export const Products = () => {
       queryId: tg.initDataUnsafe?.query_id,
     }
     console.log('data', data)
-    fetch('http://46.101.228.214:8000/web-data', {
+    fetch('http://10.114.0.2:8000/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
