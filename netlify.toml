@@ -3,6 +3,4 @@
   to = "http://46.101.228.214:8000/web-data"
   status = 200
   force = true
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  
