@@ -50,7 +50,7 @@ export const Products = () => {
       sum: 2000,
       queryId,
     }
-    fetch('http://localhost:8000/web-data', {
+    fetch('http://46.101.228.214:8000/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
