@@ -8,6 +8,7 @@ import { MacaronsModal } from './MacaronsModal/MacaronsModal'
 import { Modal } from 'components/core-components/Modal'
 
 import styles from './Products.module.scss'
+import { useTelegram } from 'hooks/useTelegram'
 // import { useTelegram } from 'hooks/useTelegram'
 
 const categories: Category[] = [
@@ -28,11 +29,8 @@ const categoryComponents: ICategoryComponents = {
   macarons: MacaronsModal,
 }
 
-// @ts-ignore
-const tg = window.Telegram.WebApp
-
 export const Products = () => {
-  // const { queryId, user } = useTelegram()
+  const { queryId } = useTelegram()
 
   const { t } = useTranslation()
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
@@ -51,10 +49,10 @@ export const Products = () => {
     const data = {
       info: ['addedItems'],
       sum: 2000,
-      queryId: tg.initDataUnsafe?.query_id,
+      queryId,
     }
-    console.log('data', data)
-    fetch('http://10.114.0.2:8000/web-data', {
+
+    fetch('http://46.101.228.214:8000/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -70,6 +68,7 @@ export const Products = () => {
 
   return (
     <div className={styles.categories}>
+      queryId: {queryId}
       {categories.map((category) => (
         <div
           key={category.id}
