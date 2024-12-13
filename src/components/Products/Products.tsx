@@ -9,6 +9,7 @@ import { Modal } from 'components/core-components/Modal'
 import { useTelegram } from 'hooks/useTelegram'
 
 import styles from './Products.module.scss'
+import axios from 'axios'
 
 const categories: Category[] = [
   { id: 'cakes', name: 'Cakes', image: '/images/cakes.jpg' },
@@ -35,9 +36,9 @@ export const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null,
   )
-  const [currentResponse, setCurrentResponse] = useState<any>()
-  const [currentData, setCurrentData] = useState<any>()
-  const [currentError, setCurrentError] = useState<any>()
+  // const [currentResponse, setCurrentResponse] = useState<any>()
+  // const [currentData, setCurrentData] = useState<any>()
+  // const [currentError, setCurrentError] = useState<any>()
 
   const openModal = (category: Category) => {
     setSelectedCategory(category)
@@ -54,22 +55,28 @@ export const Products = () => {
       queryId,
     }
 
-    fetch('http://46.101.228.214:8000/web-data', {
-      method: 'POST',
+    axios.post('http://46.101.228.214:8000/web-data', data, {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
     })
-      .then((response) => {
-        setCurrentResponse(response)
 
-        return response.json()
-      })
-      .then((data) => setCurrentData(data))
-      .catch((error) => {
-        setCurrentError(error)
-      })
+    // fetch('http://46.101.228.214:8000/web-data', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((response) => {
+    //     setCurrentResponse(response)
+
+    //     return response.json()
+    //   })
+    //   .then((data) => setCurrentData(data))
+    //   .catch((error) => {
+    //     setCurrentError(error)
+    //   })
     setSelectedCategory(null)
   }
 
@@ -96,7 +103,7 @@ export const Products = () => {
         </div>
       ))}
       QueryID: {queryId}
-      {currentResponse ? (
+      {/* {currentResponse ? (
         <div>Response received:{JSON.stringify(currentResponse)}</div>
       ) : (
         <></>
@@ -110,7 +117,7 @@ export const Products = () => {
         <div>Response currentError:{JSON.stringify(currentError)}</div>
       ) : (
         <></>
-      )}
+      )} */}
       <Modal isOpen={!!selectedCategory} onClose={closeModal} onSave={onSave}>
         {SelectedComponent && <SelectedComponent />}
       </Modal>
