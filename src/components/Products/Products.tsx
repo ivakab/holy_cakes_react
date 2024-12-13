@@ -45,7 +45,7 @@ export const Products = () => {
     setSelectedCategory(null)
   }
 
-  const onSave = async () => {
+  const onSave = () => {
     const data = {
       info: ['addedItems'],
       sum: 2000,
@@ -53,13 +53,13 @@ export const Products = () => {
     }
     setCurrentData(data)
 
-    await fetch('http://46.101.228.214:8000/web-data', {
+    fetch('http://46.101.228.214:8000/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    })
+    }).then()
     setSelectedCategory(null)
   }
 
