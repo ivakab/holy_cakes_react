@@ -6,10 +6,9 @@ import { BentoModal } from './BentoModal/BentoModal'
 import { CupcakesModal } from './CupcakesModal/CupcakesModal'
 import { MacaronsModal } from './MacaronsModal/MacaronsModal'
 import { Modal } from 'components/core-components/Modal'
+import { useTelegram } from 'hooks/useTelegram'
 
 import styles from './Products.module.scss'
-import { useTelegram } from 'hooks/useTelegram'
-// import { useTelegram } from 'hooks/useTelegram'
 
 const categories: Category[] = [
   { id: 'cakes', name: 'Cakes', image: '/images/cakes.jpg' },
@@ -68,7 +67,6 @@ export const Products = () => {
 
   return (
     <div className={styles.categories}>
-      queryId: {queryId}
       {categories.map((category) => (
         <div
           key={category.id}
@@ -85,6 +83,7 @@ export const Products = () => {
           {t(`products.categories.${category.id}`)}
         </div>
       ))}
+      QueryID: {queryId}
       <Modal isOpen={!!selectedCategory} onClose={closeModal} onSave={onSave}>
         {SelectedComponent && <SelectedComponent />}
       </Modal>
