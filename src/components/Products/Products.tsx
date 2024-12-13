@@ -72,7 +72,11 @@ export const Products = () => {
           onClick={() => openModal(category)}
         >
           <div className={styles.categoryImageWrapper}>
-            <img src={category.image} className={styles.categoryImage} />
+            <img
+              src={category.image}
+              alt={''}
+              className={styles.categoryImage}
+            />
           </div>
           {t(`products.categories.${category.id}`)}
         </div>
