@@ -60,7 +60,7 @@ export const Products = () => {
     //   },
     // })
 
-    fetch('http://46.101.228.214:8000/web-data', {
+    fetch('https://holy-backend.com/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
