@@ -18,6 +18,7 @@
       "select_size": "Выберите размер",
       "select_sponge": "Выберите бисквит",
       "select_filling": "Выберите начинку",
+      "select_date_placeholder": "Выберите дату",
       "sizes": {
         "m": "М (400 г)",
         "l": "Л (700 г)",

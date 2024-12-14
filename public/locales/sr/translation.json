@@ -18,6 +18,7 @@
       "select_size": "Изаберите величину",
       "select_sponge": "Изаберите бисквит",
       "select_filling": "Изаберите фил",
+      "select_date_placeholder": "Изаберите датум",
       "sizes": {
         "m": "М (400 г)",
         "l": "Л (700 г)",
