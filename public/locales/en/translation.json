@@ -13,26 +13,46 @@
       "cupcakes": "Cupcakes",
       "macarons": "Macarons"
     },
-    "bento": {
-      "modal_header": "Choose your Bento",
+    "placeholders": {
+      "modal_header": "Choose your {{product}}",
+      "select_date": "Select date",
       "select_size": "Select size",
       "select_sponge": "Select sponge",
       "select_filling": "Select filling",
-      "select_date_placeholder": "Select date",
+      "select_flavour": "Select flavour",
+      "select_count": "Select count",
+      "select_taste": "Select taste"
+    },
+    "sponges": {
+      "choko": "Choko",
+      "vanilla": "Vanilla",
+      "carrot": "Carrot",
+      "red_velvet": "Red velvet"
+    },
+    "fillings": {
+      "cherry": "Cherry",
+      "caramel": "Caramel",
+      "strawberry": "Strawberry",
+      "raspberry": "Raspberry",
+      "orange_curd": "Orange curd"
+    },
+    "cakes": {
+      "weight": "kg"
+    },
+    "bento": {
       "sizes": {
         "m": "M (400 g)",
         "l": "L (700 g)",
         "heart": "Heart (450-500 g)"
-      },
-      "sponges": {
-        "choko": "Choko",
-        "vanilla": "Vanilla",
-        "carrot": "Carrot"
-      },
-      "fillings": {
-        "cherry": "Cherry",
-        "caramel": "Caramel",
-        "strawberry": "Strawberry"
+      }
+    },
+    "cupcakes": {
+      "piece": "pieces"
+    },
+    "macarons": {
+      "tastes": {
+        "strawberry": "Strawberry",
+        "mango": "Mango"
       }
     }
   }

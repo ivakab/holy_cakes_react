@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Category } from './interfaces'
-import { CakesModal } from './CakesModal/CakesModal'
-import { BentoModal } from './BentoModal/BentoModal'
-import { CupcakesModal } from './CupcakesModal/CupcakesModal'
-import { MacaronsModal } from './MacaronsModal/MacaronsModal'
+import { CakesModal } from './ModalsWithForm/CakesModal/CakesModal'
+import { BentoModal } from './ModalsWithForm/BentoModal/BentoModal'
+import { CupcakesModal } from './ModalsWithForm/CupcakesModal/CupcakesModal'
+import { MacaronsModal } from './ModalsWithForm/MacaronsModal/MacaronsModal'
 import { Modal } from 'components/core-components/Modal'
 import { useTelegram } from 'hooks/useTelegram'
 
@@ -60,7 +60,7 @@ export const Products = () => {
     //   },
     // })
 
-    fetch('https://holy-backend.com/web-data', {
+    fetch('http://46.101.228.214:8000/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

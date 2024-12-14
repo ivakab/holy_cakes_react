@@ -13,26 +13,46 @@
       "cupcakes": "Капкейки",
       "macarons": "Макароны"
     },
-    "bento": {
-      "modal_header": "Выберите ваш Бенто",
+    "placeholders": {
+      "modal_header": "Выберите ваш {{product}}",
+      "select_date": "Выберите дату",
       "select_size": "Выберите размер",
       "select_sponge": "Выберите бисквит",
       "select_filling": "Выберите начинку",
-      "select_date_placeholder": "Выберите дату",
+      "select_flavour": "Выберите начинку",
+      "select_count": "Выберите количество",
+      "select_taste": "Выберите начинку"
+    },
+    "sponges": {
+      "choko": "Шоколадный",
+      "vanilla": "Ванильный",
+      "carrot": "Морковный",
+      "red_velvet": "Красный бархат"
+    },
+    "fillings": {
+      "cherry": "Вишня",
+      "caramel": "Карамель",
+      "strawberry": "Клубника",
+      "raspberry": "Малина",
+      "orange_curd": "Апельсиновый курд"
+    },
+    "cakes": {
+      "weight": "кг"
+    },
+    "bento": {
       "sizes": {
         "m": "М (400 г)",
         "l": "Л (700 г)",
         "heart": "Сердце (450-500 г)"
-      },
-      "sponges": {
-        "choko": "Шоколадный",
-        "vanilla": "Ванильный",
-        "carrot": "Морковный"
-      },
-      "fillings": {
-        "cherry": "Вишня",
-        "caramel": "Карамель",
-        "strawberry": "Клубника"
+      }
+    },
+    "cupcakes": {
+      "piece": "штук"
+    },
+    "macarons": {
+      "tastes": {
+        "strawberry": "Клубника",
+        "mango": "Манго"
       }
     }
   }
