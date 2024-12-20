@@ -35,9 +35,6 @@ export const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null,
   )
-  const [currentResponse, setCurrentResponse] = useState<any>()
-  const [currentData, setCurrentData] = useState<any>()
-  const [currentError, setCurrentError] = useState<any>()
 
   const openModal = (category: Category) => {
     setSelectedCategory(category)
@@ -54,12 +51,6 @@ export const Products = () => {
       queryId,
     }
 
-    // axios.post('http://46.101.228.214:8000/web-data', data, {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // })
-
     fetch('http://46.101.228.214:8000/web-data', {
       method: 'POST',
       headers: {
@@ -67,15 +58,6 @@ export const Products = () => {
       },
       body: JSON.stringify(data),
     })
-      .then((response) => {
-        setCurrentResponse(response)
-
-        return response.json()
-      })
-      .then((data) => setCurrentData(data))
-      .catch((error) => {
-        setCurrentError(error)
-      })
     setSelectedCategory(null)
   }
 
@@ -101,22 +83,6 @@ export const Products = () => {
           {t(`products.categories.${category.id}`)}
         </div>
       ))}
-      QueryID: {queryId}
-      {currentResponse ? (
-        <div>Response received:{JSON.stringify(currentResponse)}</div>
-      ) : (
-        <></>
-      )}
-      {currentData ? (
-        <div>Response currentData:{JSON.stringify(currentData)}</div>
-      ) : (
-        <></>
-      )}
-      {currentError ? (
-        <div>Response currentError:{JSON.stringify(currentError)}</div>
-      ) : (
-        <></>
-      )}
       <Modal isOpen={!!selectedCategory} onClose={closeModal} onSave={onSave}>
         {SelectedComponent && <SelectedComponent />}
       </Modal>
