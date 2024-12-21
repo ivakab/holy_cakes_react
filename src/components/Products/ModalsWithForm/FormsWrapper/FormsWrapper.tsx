@@ -32,17 +32,15 @@ export const FormsWrapper = ({ productKey, children }: IFormsWrapperProps) => {
       <div className={styles.form}>
         {children}
 
-        <div>
-          <DatePicker
-            selected={selectedDate}
-            onChange={(date: Date | null) => setSelectedDate(date)}
-            placeholderText={t('products.placeholders.select_date')}
-            dateFormat={'dd/MM/yyyy'}
-            minDate={new Date()}
-            locale={currentLocale}
-            className={styles.customInput}
-          />
-        </div>
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date: Date | null) => setSelectedDate(date)}
+          placeholderText={t('products.placeholders.select_date')}
+          dateFormat={'dd/MM/yyyy'}
+          minDate={new Date()}
+          locale={currentLocale}
+          className={styles.customInput}
+        />
       </div>
     </div>
   )

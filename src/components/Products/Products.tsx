@@ -5,7 +5,7 @@ import { CakesModal } from './ModalsWithForm/CakesModal/CakesModal'
 import { BentoModal } from './ModalsWithForm/BentoModal/BentoModal'
 import { CupcakesModal } from './ModalsWithForm/CupcakesModal/CupcakesModal'
 import { MacaronsModal } from './ModalsWithForm/MacaronsModal/MacaronsModal'
-import { Modal } from 'components/core-components/Modal'
+import { Modal } from 'components/ui/Modal'
 import { useTelegram } from 'hooks/useTelegram'
 
 import styles from './Products.module.scss'
@@ -29,19 +29,26 @@ const categoryComponents: ICategoryComponents = {
 }
 
 export const Products = () => {
-  const { queryId } = useTelegram()
-
-  const { t } = useTranslation()
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null,
   )
+  const [closing, setClosing] = useState(false)
+  const { queryId } = useTelegram()
+
+  const { t } = useTranslation()
 
   const openModal = (category: Category) => {
     setSelectedCategory(category)
   }
 
   const closeModal = () => {
-    setSelectedCategory(null)
+    // Set closing to true to indicate the modal is closing
+    setClosing(true)
+    setTimeout(() => {
+      // Remove the SelectedComponent after the close animation completes
+      setSelectedCategory(null)
+      setClosing(false)
+    }, 200)
   }
 
   const onSave = () => {
@@ -83,7 +90,11 @@ export const Products = () => {
           {t(`products.categories.${category.id}`)}
         </div>
       ))}
-      <Modal isOpen={!!selectedCategory} onClose={closeModal} onSave={onSave}>
+      <Modal
+        isOpen={!!selectedCategory && !closing}
+        onClose={closeModal}
+        onSave={onSave}
+      >
         {SelectedComponent && <SelectedComponent />}
       </Modal>
     </div>

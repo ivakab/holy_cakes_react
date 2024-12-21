@@ -1,7 +1,7 @@
-import { Dropdown } from 'components/core-components/Dropdown'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FormsWrapper } from '../FormsWrapper/FormsWrapper'
+import { Dropdown } from 'components/ui/Dropdown'
 
 interface ISpongeCakesModalProps {
   productKey: string
