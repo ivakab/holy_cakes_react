@@ -2,12 +2,14 @@ import { LanguageSelection } from '../LanguageSelection/LanguageSelection'
 
 import React from 'react'
 
-import styles from './Header.module.css'
-
 export const Header = () => {
   return (
-    <div className={styles.header}>
-      <div className={styles.text}>HOLY CAKES</div>
+    <div
+      className={
+        'bg-white text-black px-5 w-full h-[10vh] flex items-center justify-between relative'
+      }
+    >
+      <div className={'text-xl font-bold'}>HOLY CAKES</div>
       <LanguageSelection />
     </div>
   )

@@ -8,18 +8,16 @@ import { MacaronsModal } from './ModalsWithForm/MacaronsModal/MacaronsModal'
 import { Modal } from 'components/ui/Modal'
 import { useTelegram } from 'hooks/useTelegram'
 
-import styles from './Products.module.scss'
+interface ICategoryComponents {
+  [key: string]: (props: any) => JSX.Element
+}
 
-const categories: Category[] = [
+const categories = [
   { id: 'cakes', name: 'Cakes', image: '/images/cakes.jpg' },
   { id: 'bento', name: 'Bento', image: '/images/bento.jpg' },
   { id: 'cupcakes', name: 'Cupcakes', image: '/images/cupcakes.jpg' },
   { id: 'macarons', name: 'Macarons', image: '/images/macarons.jpg' },
 ]
-
-interface ICategoryComponents {
-  [key: string]: (props: any) => JSX.Element
-}
 
 const categoryComponents: ICategoryComponents = {
   cakes: CakesModal,
@@ -34,18 +32,13 @@ export const Products = () => {
   )
   const [closing, setClosing] = useState(false)
   const { queryId } = useTelegram()
-
   const { t } = useTranslation()
 
-  const openModal = (category: Category) => {
-    setSelectedCategory(category)
-  }
+  const openModal = (category: Category) => setSelectedCategory(category)
 
   const closeModal = () => {
-    // Set closing to true to indicate the modal is closing
     setClosing(true)
     setTimeout(() => {
-      // Remove the SelectedComponent after the close animation completes
       setSelectedCategory(null)
       setClosing(false)
     }, 200)
@@ -53,7 +46,7 @@ export const Products = () => {
 
   const onSave = () => {
     const data = {
-      info: ['addedItems'],
+      info: ['testData'],
       sum: 2000,
       queryId,
     }
@@ -73,18 +66,19 @@ export const Products = () => {
   }, [selectedCategory])
 
   return (
-    <div className={styles.categories}>
+    <div className={'overflow-auto max-h-[80vh] flex flex-wrap gap-2 p-5'}>
       {categories.map((category) => (
         <div
           key={category.id}
-          className={styles.category}
+          className={`flex-[1_1_calc(50%-5px)] max-w-[calc(50%-5px)] p-4 rounded-lg cursor-pointer text-center bg-white
+            text-black shadow-md transition-transform duration-200 hover:scale-[1.02]`}
           onClick={() => openModal(category)}
         >
-          <div className={styles.categoryImageWrapper}>
+          <div className={'relative w-full pt-[100%] overflow-hidden mb-2'}>
             <img
               src={category.image}
               alt={''}
-              className={styles.categoryImage}
+              className={'absolute top-0 left-0 w-full h-full object-cover'}
             />
           </div>
           {t(`products.categories.${category.id}`)}

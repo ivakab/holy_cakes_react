@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 import { enUS } from 'date-fns/locale/en-US'
 import { ru } from 'date-fns/locale/ru'
 import { sr } from 'date-fns/locale/sr'
-import styles from './FormsWrapper.module.scss'
 import 'react-datepicker/dist/react-datepicker.css'
 
 interface IFormsWrapperProps {
@@ -22,14 +21,14 @@ export const FormsWrapper = ({ productKey, children }: IFormsWrapperProps) => {
   const currentLocale = i18n.language
 
   return (
-    <div>
-      <h2 className={styles.title}>
+    <div className={'p-4'}>
+      <h2 className={'text-2xl font-bold text-center mb-5'}>
         {t('products.placeholders.modal_header', {
           product: t(`products.categories.${productKey}`),
         })}
       </h2>
 
-      <div className={styles.form}>
+      <div className={'flex flex-col gap-4'}>
         {children}
 
         <DatePicker
@@ -39,7 +38,7 @@ export const FormsWrapper = ({ productKey, children }: IFormsWrapperProps) => {
           dateFormat={'dd/MM/yyyy'}
           minDate={new Date()}
           locale={currentLocale}
-          className={styles.customInput}
+          className={'w-full p-2 border border-gray-300 rounded outline-none'}
         />
       </div>
     </div>
