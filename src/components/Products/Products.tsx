@@ -5,8 +5,8 @@ import { CakesModal } from './ModalsWithForm/CakesModal/CakesModal'
 import { BentoModal } from './ModalsWithForm/BentoModal/BentoModal'
 import { CupcakesModal } from './ModalsWithForm/CupcakesModal/CupcakesModal'
 import { MacaronsModal } from './ModalsWithForm/MacaronsModal/MacaronsModal'
-import { Modal } from 'components/ui/Modal'
-import { useTelegram } from 'hooks/useTelegram'
+import { Modal } from '../ui/Modal'
+import { useTelegram } from '../../hooks/useTelegram'
 
 interface ICategoryComponents {
   [key: string]: (props: any) => JSX.Element

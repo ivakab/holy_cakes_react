@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocalizedOptions } from '../hooks/useLocalizedOptions'
 import { FormsWrapper } from '../FormsWrapper/FormsWrapper'
-import { Dropdown } from 'components/ui/Dropdown'
+import { Dropdown } from '../../../ui/Dropdown'
 
 export const MacaronsModal = () => {
   const [selectedCount, setSelectedCount] = useState('')

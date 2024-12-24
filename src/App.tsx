@@ -6,8 +6,8 @@ import { Main } from './components/Main/Main'
 import { Footer } from './components/Footer/Footer'
 import { Products } from './components/Products/Products'
 
-import './index.css'
 import './App.css'
+import './index.css'
 
 function App() {
   const { tg } = useTelegram()

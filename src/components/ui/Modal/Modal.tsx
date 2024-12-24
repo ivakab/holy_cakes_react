@@ -5,7 +5,7 @@ import {
   Transition,
   TransitionChild,
 } from '@headlessui/react'
-import { CoreButton } from 'components/ui/Button'
+import { CoreButton } from '../Button'
 import { IModalProps } from './models/IModalProps'
 
 export const Modal = ({ isOpen, onClose, onSave, children }: IModalProps) => {
