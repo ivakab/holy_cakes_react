@@ -84,6 +84,7 @@ export const Products = () => {
           {t(`products.categories.${category.id}`)}
         </div>
       ))}
+      queryID: {queryId}
       <Modal
         isOpen={!!selectedCategory && !closing}
         onClose={closeModal}
