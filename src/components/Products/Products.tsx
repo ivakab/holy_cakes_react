@@ -51,7 +51,7 @@ export const Products = () => {
       queryId,
     }
 
-    fetch('https://holycakes.shop/web-data', {
+    fetch('https://holycakes.shop/api/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
