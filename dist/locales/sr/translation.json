@@ -1,0 +1,59 @@
+{
+  "footer": {
+    "about": "О пројекту",
+    "works": "Ради",
+    "order": "Ред",
+    "events": "Догађаји"
+  },
+  "description": "Ево рећи ћу вам нешто о себи",
+  "products": {
+    "categories": {
+      "cakes": "Колачи",
+      "bento": "Бенто",
+      "cupcakes": "Колачић",
+      "macarons": "Макарони"
+    },
+    "placeholders": {
+      "modal_header": "Изаберите свој {{product}}",
+      "select_date": "Изаберите датум",
+      "select_size": "Изаберите величину",
+      "select_sponge": "Изаберите бисквит",
+      "select_filling": "Изаберите фил",
+      "select_flavour": "Изаберите фил",
+      "select_count": "Изаберите количину",
+      "select_taste": "Изаберите укус"
+    },
+    "sponges": {
+      "choko": "Чоколадни",
+      "vanilla": "Ванила",
+      "carrot": "Шаргарепа",
+      "red_velvet": "Црвени сомот"
+    },
+    "fillings": {
+      "cherry": "Трешња",
+      "caramel": "Карамела",
+      "strawberry": "Јагода",
+      "raspberry": "Малина",
+      "orange_curd": "Наранџа"
+    },
+    "cakes": {
+      "weight": "кг"
+    },
+    "bento": {
+      "sizes": {
+        "m": "М (400 г)",
+        "l": "Л (700 г)",
+        "heart": "Срце (450-500 г)"
+      }
+    },
+    "cupcakes": {
+      "piece": "комада"
+    },
+    "macarons": {
+      "tastes": {
+        "strawberry": "Јагода",
+        "mango": "Манго"
+      }
+    }
+  }
+}
