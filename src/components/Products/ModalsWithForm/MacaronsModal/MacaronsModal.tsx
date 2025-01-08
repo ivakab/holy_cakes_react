@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocalizedOptions } from '../hooks/useLocalizedOptions'
 import { FormsWrapper } from '../FormsWrapper/FormsWrapper'
 import { Dropdown } from '../../../ui/Dropdown'
+import { OrderContext } from '../../Category'
 
 export const MacaronsModal = () => {
-  const [selectedCount, setSelectedCount] = useState('')
-  const [selectedTaste, setSelectedTaste] = useState('')
-
   const { macaronsTastes } = useLocalizedOptions()
+  const orderContext = useContext(OrderContext)
 
   const { t } = useTranslation()
 
@@ -20,15 +19,19 @@ export const MacaronsModal = () => {
     <FormsWrapper productKey={'macarons'}>
       <Dropdown
         options={macaronsCount}
-        value={selectedCount}
-        onChange={(value: string) => setSelectedCount(value)}
+        value={orderContext?.order?.options['count'] || ''}
+        onChange={(value: string) =>
+          orderContext?.handleUpdateOrder('count', value)
+        }
         placeholder={t('products.placeholders.select_count')}
       />
 
       <Dropdown
         options={macaronsTastes}
-        value={selectedTaste}
-        onChange={(value: string) => setSelectedTaste(value)}
+        value={orderContext?.order?.options['taste'] || ''}
+        onChange={(value: string) =>
+          orderContext?.handleUpdateOrder('taste', value)
+        }
         placeholder={t('products.placeholders.select_taste')}
       />
     </FormsWrapper>

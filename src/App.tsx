@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import { Header } from './components/Header/Header'
 import { Main } from './components/Main/Main'
 import { Footer } from './components/Footer/Footer'
-import { Products } from './components/Products/Products'
+import { Category } from './components/Products/Category'
 
 import './App.css'
 import './index.css'
@@ -21,7 +21,7 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Main />} />
-        <Route path={'order'} element={<Products />} />
+        <Route path={'order'} element={<Category />} />
       </Routes>
       <Footer />
     </div>

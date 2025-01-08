@@ -37,7 +37,7 @@ export const useLocalizedOptions = () => {
     (count) => `${count} ${t('products.cakes.weight')}`,
   )
 
-  const cakesFlavours = ['test values', 'test values', 'test values']
+  const cakesFlavours = ['test value 1', 'test value 2', 'test value 3']
 
   const macaronsTastes = [
     t('products.macarons.tastes.strawberry'),

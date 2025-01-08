@@ -1,10 +1,11 @@
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode, useContext } from 'react'
 import DatePicker, { registerLocale } from 'react-datepicker'
 import { useTranslation } from 'react-i18next'
 import { enUS } from 'date-fns/locale/en-US'
 import { ru } from 'date-fns/locale/ru'
 import { sr } from 'date-fns/locale/sr'
 import 'react-datepicker/dist/react-datepicker.css'
+import { OrderContext } from '../../Category'
 
 interface IFormsWrapperProps {
   productKey: string
@@ -16,9 +17,9 @@ registerLocale('ru', ru)
 registerLocale('sr', sr)
 
 export const FormsWrapper = ({ productKey, children }: IFormsWrapperProps) => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const { t, i18n } = useTranslation()
   const currentLocale = i18n.language
+  const orderContext = useContext(OrderContext)
 
   return (
     <div className={'p-4'}>
@@ -32,8 +33,12 @@ export const FormsWrapper = ({ productKey, children }: IFormsWrapperProps) => {
         {children}
 
         <DatePicker
-          selected={selectedDate}
-          onChange={(date: Date | null) => setSelectedDate(date)}
+          selected={
+            orderContext?.order?.date ? new Date(orderContext.order.date) : null
+          }
+          onChange={(date: Date | null) =>
+            orderContext?.handleUpdateOrder('date', date)
+          }
           placeholderText={t('products.placeholders.select_date')}
           dateFormat={'dd/MM/yyyy'}
           minDate={new Date()}

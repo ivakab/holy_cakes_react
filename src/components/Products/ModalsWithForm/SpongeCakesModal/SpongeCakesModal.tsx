@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FormsWrapper } from '../FormsWrapper/FormsWrapper'
 import { Dropdown } from '../../../ui/Dropdown'
+import { OrderContext } from '../../Category'
 
 interface ISpongeCakesModalProps {
   productKey: string
@@ -16,15 +17,8 @@ export const SpongeCakesModal = ({
   productKey,
   dropdowns,
 }: ISpongeCakesModalProps) => {
-  const [state, setState] = useState<Record<string, string>>({})
   const { t } = useTranslation()
-
-  const handleChange = (key: string, value: string) => {
-    setState((prevState) => ({
-      ...prevState,
-      [key]: value,
-    }))
-  }
+  const orderContext = useContext(OrderContext)
 
   return (
     <FormsWrapper productKey={productKey}>
@@ -32,8 +26,10 @@ export const SpongeCakesModal = ({
         <Dropdown
           key={index}
           options={options}
-          value={state[stateKey] || ''}
-          onChange={(value: string) => handleChange(stateKey, value)}
+          value={orderContext?.order?.options[stateKey] || ''}
+          onChange={(value: string) =>
+            orderContext?.handleUpdateOrder(stateKey, value)
+          }
           placeholder={t(placeholderKey)}
         />
       ))}
