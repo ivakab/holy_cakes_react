@@ -96,24 +96,7 @@ export const Category = () => {
       return
     }
 
-    const data = {
-      ...order,
-      queryId,
-    }
-
     try {
-      // const response = await fetch('https://holycakes.shop/api/web-data', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(data),
-      // })
-
-      // if (!response.ok) {
-      //   throw new Error(`HTTP error! status: ${response.status}`)
-      // }
-
       dispatch(addProduct(order))
     } catch (err) {
       console.error('Error saving data:', err)
@@ -124,6 +107,7 @@ export const Category = () => {
 
   return (
     <div className={'overflow-auto max-h-[80vh] flex flex-wrap gap-2 p-5'}>
+      {queryId}
       {categories.map((category) => (
         <CategoryCard
           key={category.id}
