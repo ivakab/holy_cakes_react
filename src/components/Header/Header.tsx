@@ -27,7 +27,7 @@ export const Header = () => {
     const data = {
       products,
       queryId,
-      tg: tg.initDataUnsafe?.queryId,
+      tg: tg.initDataUnsafe?.query_id,
       user,
     }
 
