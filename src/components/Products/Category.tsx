@@ -4,7 +4,6 @@ import { BentoModal } from './ModalsWithForm/BentoModal/BentoModal'
 import { CupcakesModal } from './ModalsWithForm/CupcakesModal/CupcakesModal'
 import { MacaronsModal } from './ModalsWithForm/MacaronsModal/MacaronsModal'
 import { Modal } from '../ui/Modal'
-import { useTelegram } from '../../hooks/useTelegram'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../store/reducers/OrderSlice'
 import { ProductOrder } from 'store/models/IOrders'
@@ -43,7 +42,6 @@ export const Category = () => {
   const [selectedCategory, setSelectedCategory] = useState<ICategory | null>(
     null,
   )
-  const { queryId } = useTelegram()
   const dispatch = useDispatch()
   const [order, setOrder] = useState<ProductOrder | null>(null)
 
@@ -107,7 +105,6 @@ export const Category = () => {
 
   return (
     <div className={'overflow-auto max-h-[80vh] flex flex-wrap gap-2 p-5'}>
-      test {queryId}
       {categories.map((category) => (
         <CategoryCard
           key={category.id}
