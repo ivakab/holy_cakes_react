@@ -25,7 +25,7 @@ export const Header = () => {
 
   const onSave = async () => {
     const data = {
-      products: products,
+      products,
       queryId,
       user,
     }
@@ -40,7 +40,7 @@ export const Header = () => {
         'bg-white text-black px-5 w-full h-[10vh] flex items-center justify-between relative'
       }
     >
-      <div className={'text-xl font-bold'}>HOLY CAKES {user?.username}</div>
+      <div className={'text-xl font-bold'}>HOLY CAKES</div>
       {hasProducts && (
         <CoreButton theme={'dark'} onClick={openModal}>
           Confirm order
