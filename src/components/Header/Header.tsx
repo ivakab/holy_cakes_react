@@ -11,7 +11,7 @@ import { useTelegram } from '../../hooks/useTelegram'
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const products = useSelector((state: RootState) => state.order.products)
-  const { queryId, user } = useTelegram()
+  const { tg, queryId, user } = useTelegram()
 
   const hasProducts = products.length > 0
 
@@ -27,6 +27,7 @@ export const Header = () => {
     const data = {
       products,
       queryId,
+      tg: tg.initDataUnsafe,
       user,
     }
 
