@@ -107,7 +107,7 @@ export const Category = () => {
 
   return (
     <div className={'overflow-auto max-h-[80vh] flex flex-wrap gap-2 p-5'}>
-      {queryId}
+      test {queryId}
       {categories.map((category) => (
         <CategoryCard
           key={category.id}

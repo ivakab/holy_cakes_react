@@ -42,14 +42,13 @@ export const Header = () => {
       }
     >
       <div className={'text-xl font-bold'}>HOLY CAKES</div>
-      {queryId}
+      test {queryId}
       {hasProducts && (
         <CoreButton theme={'dark'} onClick={openModal}>
           Confirm order
         </CoreButton>
       )}
       <LanguageSelection />
-
       <Modal isOpen={isModalOpen} onClose={closeModal} onSave={onSave}>
         <OrdersCart products={products} />
       </Modal>
