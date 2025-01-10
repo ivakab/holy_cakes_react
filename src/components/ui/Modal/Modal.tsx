@@ -29,15 +29,19 @@ export const Modal = ({ isOpen, onClose, onSave, children }: IModalProps) => {
             enterTo={'opacity-100 scale-100'}
           >
             <DialogPanel
-              className={'bg-white rounded-lg shadow-lg w-full max-w-md p-6'}
+              className={
+                'bg-white rounded-lg shadow-lg w-full max-w-[90vw] p-6'
+              }
             >
               {children}
 
               <div className={'flex justify-end gap-3 border-t pt-4 mt-4'}>
-                {onSave && <CoreButton onClick={onSave}>Save</CoreButton>}
-                <CoreButton onClick={onClose} theme={'dark'}>
-                  Close
-                </CoreButton>
+                <CoreButton onClick={onClose}>Close</CoreButton>
+                {onSave && (
+                  <CoreButton onClick={onSave} theme={'dark'}>
+                    Confirm
+                  </CoreButton>
+                )}
               </div>
             </DialogPanel>
           </TransitionChild>

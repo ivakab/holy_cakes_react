@@ -1,15 +1,18 @@
 import { Button } from '@headlessui/react'
+import clsx from 'clsx'
 
 interface ICoreButtonProps {
   children: React.ReactNode
   onClick?: () => void
   theme?: 'bright' | 'dark'
+  className?: string
 }
 
 export const CoreButton = ({
   children,
   onClick,
   theme = 'bright',
+  className,
 }: ICoreButtonProps) => {
   const themeStyles =
     theme === 'bright'
@@ -20,13 +23,11 @@ export const CoreButton = ({
     <Button
       as={'button'}
       onClick={onClick}
-      className={`
-        px-4 py-2 font-bold 
-        ${themeStyles}
-        rounded shadow 
-        active:scale-95 
-        focus:outline-none
-      `}
+      className={clsx(
+        `px-4 py-2 font-bold rounded shadow active:scale-95 focus:outline-none`,
+        themeStyles,
+        className,
+      )}
     >
       {children}
     </Button>

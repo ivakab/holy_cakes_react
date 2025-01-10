@@ -6,6 +6,10 @@
     "events": "Events"
   },
   "description": "Here I will tell you something about myself",
+  "confirmation": {
+    "confirmation_order_button": "Confirm order: ",
+    "confirmation_order_modal_title": "Make order"
+  },
   "products": {
     "categories": {
       "cakes": "Cakes",

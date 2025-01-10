@@ -17,9 +17,7 @@ export const LanguageSelection = () => {
   return (
     <Menu as={'div'} className={'relative flex items-center'}>
       <MenuButton
-        className={
-          'px-4 py-2 font-bold rounded shadow text-bright-text bg-bright-bg hover:bg-bright-hover active:bg-bright-active active:scale-95 focus:outline-none ml-2'
-        }
+        className={`px-4 py-2 font-bold rounded shadow text-bright-text bg-bright-bg hover:bg-bright-hover active:bg-bright-active active:scale-95 focus:outline-none ml-2`}
       >
         {i18n.language.toUpperCase()}
       </MenuButton>

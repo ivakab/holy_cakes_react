@@ -6,6 +6,10 @@
     "events": "Мероприятия"
   },
   "description": "Здесь я расскажу что-то о себе",
+  "confirmation": {
+    "confirmation_order_button": "Подтвердите заказ: ",
+    "confirmation_order_modal_title": "Сделать заказ"
+  },
   "products": {
     "categories": {
       "cakes": "Торты",
