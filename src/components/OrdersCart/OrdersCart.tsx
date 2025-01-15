@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { ProductOrder } from 'store/models/IOrders'
 import { removeProduct } from '../../store/reducers/OrderSlice'
-import { CoreButton } from '../ui/Button'
 import { FiX } from 'react-icons/fi'
 
 interface IOrdersCartProps {

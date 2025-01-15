@@ -49,6 +49,8 @@ export const Category = () => {
     selectedCategory && categoryComponents[selectedCategory.id]
 
   const handleUpdateOrder = (key: string, value: string | Date | null) => {
+    console.log('key', key)
+    console.log('value', value)
     setOrder((prevOrder) => {
       if (!prevOrder) {
         return prevOrder
@@ -61,7 +63,7 @@ export const Category = () => {
         }
       }
 
-      if (typeof value === 'string') {
+      if (typeof value === 'string' || value === null) {
         return {
           ...prevOrder,
           options: {

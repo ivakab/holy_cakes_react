@@ -4,4 +4,5 @@ export interface IDropdownProps {
   onChange: (value: string) => void
   placeholder?: string
   className?: string
+  disabled?: boolean
 }

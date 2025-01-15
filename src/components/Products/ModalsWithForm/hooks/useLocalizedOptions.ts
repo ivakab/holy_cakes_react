@@ -10,7 +10,7 @@ export const useLocalizedOptions = () => {
   ]
 
   const bentoSponges = [
-    t('products.sponges.choko'),
+    t('products.sponges.choco'),
     t('products.sponges.vanilla'),
     t('products.sponges.carrot'),
   ]
@@ -33,11 +33,26 @@ export const useLocalizedOptions = () => {
     t('products.fillings.orange_curd'),
   ]
 
-  const cakesSizes = [2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7].map(
-    (count) => `${count} ${t('products.cakes.weight')}`,
-  )
+  const cakesSizes = [
+    'mini (1.2 kg)',
+    '2 kg',
+    '2.5 kg',
+    '3 kg',
+    '3.5 kg',
+    '4 kg',
+  ]
 
-  const cakesFlavours = ['test value 1', 'test value 2', 'test value 3']
+  const cakesFlavours = {
+    [t('products.sponges.choco')]: [
+      t('products.fillings.cherry'),
+      t('products.fillings.caramel'),
+    ],
+    [t('products.sponges.vanilla')]: [
+      t('products.fillings.strawberry'),
+      t('products.fillings.cherry'),
+    ],
+    [t('products.sponges.carrot')]: [t('products.fillings.caramel')],
+  }
 
   const macaronsTastes = [
     t('products.macarons.tastes.strawberry'),

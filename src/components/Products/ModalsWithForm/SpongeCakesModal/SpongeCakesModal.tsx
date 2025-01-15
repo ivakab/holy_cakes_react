@@ -10,6 +10,7 @@ interface ISpongeCakesModalProps {
     options: string[]
     placeholderKey: string
     stateKey: string
+    disabled?: boolean
   }[]
 }
 
@@ -22,15 +23,16 @@ export const SpongeCakesModal = ({
 
   return (
     <FormsWrapper productKey={productKey}>
-      {dropdowns.map(({ options, placeholderKey, stateKey }, index) => (
+      {dropdowns.map(({ options, placeholderKey, stateKey, disabled }) => (
         <Dropdown
-          key={index}
+          key={stateKey}
           options={options}
           value={orderContext?.order?.options[stateKey] || ''}
           onChange={(value: string) =>
             orderContext?.handleUpdateOrder(stateKey, value)
           }
           placeholder={t(placeholderKey)}
+          disabled={disabled}
         />
       ))}
     </FormsWrapper>

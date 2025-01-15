@@ -19,15 +19,15 @@ export const Footer = () => {
         <Link to="/" className={linkStyles}>
           {t('footer.about')}
         </Link>
-        <Link to="/works" className={linkStyles}>
+        {/* <Link to="/works" className={linkStyles}>
           {t('footer.works')}
-        </Link>
+        </Link> */}
         <Link to="/order" className={linkStyles}>
           {t('footer.order')}
         </Link>
-        <Link to="/events" className={linkStyles}>
+        {/* <Link to="/events" className={linkStyles}>
           {t('footer.events')}
-        </Link>
+        </Link> */}
       </nav>
       <ConfirmOrder />
     </>
