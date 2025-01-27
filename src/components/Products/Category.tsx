@@ -3,23 +3,24 @@ import { CakesModal } from './ModalsWithForm/CakesModal/CakesModal'
 import { BentoModal } from './ModalsWithForm/BentoModal/BentoModal'
 import { CupcakesModal } from './ModalsWithForm/CupcakesModal/CupcakesModal'
 import { MacaronsModal } from './ModalsWithForm/MacaronsModal/MacaronsModal'
-import { Modal } from '../ui/Modal'
+
 import { useDispatch } from 'react-redux'
-import { addProduct } from '../../store/reducers/OrderSlice'
-import { ProductOrder } from 'store/models/IOrders'
+import { addProduct } from 'src/store/reducers/OrderSlice'
+import { ProductOrder } from 'src/store/models/IOrders'
 import { nanoid } from 'nanoid'
 import { CategoryCard } from './CategoryCard'
 import { ICategory } from './interfaces'
+import { Modal } from 'src/components/ui/Modal'
 
 interface ICategoryComponents {
   [key: string]: () => JSX.Element
 }
 
 const categories = [
-  { id: 'cakes', name: 'Cakes', image: '/images/cakes.jpg' },
-  { id: 'bento', name: 'Bento', image: '/images/bento.jpg' },
-  { id: 'cupcakes', name: 'Cupcakes', image: '/images/cupcakes.jpg' },
-  { id: 'macarons', name: 'Macarons', image: '/images/macarons.jpg' },
+  { id: 'cakes', name: 'Cakes', image: '/images/cakes.webp' },
+  { id: 'bento', name: 'Bento', image: '/images/bento.webp' },
+  { id: 'cupcakes', name: 'Cupcakes', image: '/images/cupcakes.webp' },
+  { id: 'macarons', name: 'Macarons', image: '/images/macarons.webp' },
 ]
 
 const categoryComponents: ICategoryComponents = {
@@ -49,8 +50,6 @@ export const Category = () => {
     selectedCategory && categoryComponents[selectedCategory.id]
 
   const handleUpdateOrder = (key: string, value: string | Date | null) => {
-    console.log('key', key)
-    console.log('value', value)
     setOrder((prevOrder) => {
       if (!prevOrder) {
         return prevOrder

@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { RootState } from 'store'
-import { CoreButton } from '../../ui/Button'
-import { Modal } from '../../ui/Modal'
+import { RootState } from 'src/store'
+
 import { OrdersCart } from '../../OrdersCart/OrdersCart'
 import { sendOrdersData } from '../../../api/ordersApi'
 import { useTelegram } from '../../../hooks/useTelegram'
 import { useTranslation } from 'react-i18next'
+import { formatDate } from '../../helpers/dateFormatHelper'
+import { CoreButton } from 'src/components/ui/Button'
+import { Modal } from 'src/components/ui/Modal'
 
 export const ConfirmOrder = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -25,8 +27,13 @@ export const ConfirmOrder = () => {
   }
 
   const onSave = async () => {
+    const productsWithFormattedDate = products.map((product) => ({
+      ...product,
+      date: formatDate(product.date),
+    }))
+
     const data = {
-      products,
+      products: productsWithFormattedDate,
       queryId,
       user,
     }

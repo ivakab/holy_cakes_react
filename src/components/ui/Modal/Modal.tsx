@@ -5,8 +5,9 @@ import {
   Transition,
   TransitionChild,
 } from '@headlessui/react'
-import { CoreButton } from '../Button'
+
 import { IModalProps } from './models/IModalProps'
+import { CoreButton } from '../Button'
 
 export const Modal = ({ isOpen, onClose, onSave, children }: IModalProps) => {
   return (
@@ -30,7 +31,7 @@ export const Modal = ({ isOpen, onClose, onSave, children }: IModalProps) => {
           >
             <DialogPanel
               className={
-                'bg-white rounded-lg shadow-lg w-full max-w-[90vw] p-6'
+                'bg-white rounded-lg shadow-lg w-full w-[90vw] max-w-lg p-6'
               }
             >
               {children}

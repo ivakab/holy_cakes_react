@@ -1,9 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
-import { ProductOrder } from 'store/models/IOrders'
-import { removeProduct } from '../../store/reducers/OrderSlice'
+import { ProductOrder } from 'src/store/models/IOrders'
+import { removeProduct } from 'src/store/reducers/OrderSlice'
 import { FiX } from 'react-icons/fi'
+import { formatDate } from '../helpers/dateFormatHelper'
 
 interface IOrdersCartProps {
   products: ProductOrder[]
@@ -38,7 +39,7 @@ export const OrdersCart = ({ products }: IOrdersCartProps) => {
             {t(`products.categories.${product.productKey}`)}
           </div>
           <div className={'text-sm text-gray-600'}>
-            Date: {product.date || 'No date specified'}
+            Date: {formatDate(product.date)}
           </div>
           <div className={'mt-2'}>
             {Object.entries(product.options).map(([key, value]) => (

@@ -6,4 +6,9 @@ export const pathResolver = (p: string) => resolve(__dirname, '.', p)
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      src: resolve(__dirname, 'src'),
+    },
+  },
 })

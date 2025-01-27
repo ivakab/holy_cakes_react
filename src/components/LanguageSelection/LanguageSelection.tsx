@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { CoreButton } from '../ui/Button'
+import { CoreButton } from 'src/components/ui/Button'
 
 export const LanguageSelection = () => {
   const { i18n } = useTranslation()

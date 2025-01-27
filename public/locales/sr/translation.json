@@ -20,6 +20,7 @@
     "placeholders": {
       "modal_header": "Изаберите свој {{product}}",
       "select_date": "Изаберите датум",
+      "select_time": "Izaberite vreme",
       "select_size": "Изаберите величину",
       "select_sponge": "Изаберите бисквит",
       "select_filling": "Изаберите фил",

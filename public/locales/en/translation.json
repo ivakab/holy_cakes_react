@@ -20,6 +20,7 @@
     "placeholders": {
       "modal_header": "Choose your {{product}}",
       "select_date": "Select date",
+      "select_time": "Select time",
       "select_size": "Select size",
       "select_sponge": "Select sponge",
       "select_filling": "Select filling",

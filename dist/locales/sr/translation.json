@@ -6,6 +6,10 @@
     "events": "Догађаји"
   },
   "description": "Ево рећи ћу вам нешто о себи",
+  "confirmation": {
+    "confirmation_order_button": "Потврди наруџбину: ",
+    "confirmation_order_modal_title": "Направити поруџбину"
+  },
   "products": {
     "categories": {
       "cakes": "Колачи",
@@ -24,7 +28,7 @@
       "select_taste": "Изаберите укус"
     },
     "sponges": {
-      "choko": "Чоколадни",
+      "choco": "Чоколадни",
       "vanilla": "Ванила",
       "carrot": "Шаргарепа",
       "red_velvet": "Црвени сомот"

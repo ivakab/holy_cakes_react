@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocalizedOptions } from '../hooks/useLocalizedOptions'
 import { FormsWrapper } from '../FormsWrapper/FormsWrapper'
-import { Dropdown } from '../../../ui/Dropdown'
+
 import { OrderContext } from '../../Category'
+import { Dropdown } from 'src/components/ui/Dropdown'
 
 export const MacaronsModal = () => {
   const { macaronsTastes } = useLocalizedOptions()

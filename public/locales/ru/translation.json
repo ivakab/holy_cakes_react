@@ -20,6 +20,7 @@
     "placeholders": {
       "modal_header": "Выберите ваш {{product}}",
       "select_date": "Выберите дату",
+      "select_time": "Выберите время",
       "select_size": "Выберите размер",
       "select_sponge": "Выберите бисквит",
       "select_filling": "Выберите начинку",

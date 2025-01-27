@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FormsWrapper } from '../FormsWrapper/FormsWrapper'
-import { Dropdown } from '../../../ui/Dropdown'
+
 import { OrderContext } from '../../Category'
+import { Dropdown } from 'src/components/ui/Dropdown'
 
 interface ISpongeCakesModalProps {
   productKey: string
