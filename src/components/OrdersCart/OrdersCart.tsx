@@ -11,6 +11,7 @@ interface IOrdersCartProps {
 }
 
 export const OrdersCart = ({ products }: IOrdersCartProps) => {
+  console.log('products', products)
   const { t } = useTranslation()
   const dispatch = useDispatch()
 
